@@ -81,21 +81,6 @@ public class PCSController {
             ob_sbp.setEncounter(encounterRef);
         }
 
-        // Systolic Blood Pressure
-        if (!pcs.getVital_sbp().isEmpty()) {
-            Observation ob_sbp = new Observation();
-            ob_sbp.setStatus(ObservationStatus.FINAL);
-            ob_sbp.addCategory(vital_cat);
-            CodeableConcept sbp_code = new CodeableConcept();
-            sbp_code.addCoding().setCode("8480-6").setDisplay("Systolic blood pressure").setSystem("http://loinc.org");
-            ob_sbp.setCode(sbp_code);
-            ob_sbp.setValue(new StringType(pcs.getVital_sbp()));
-            ob_sbp.setEffective(vitals_dt);
-            
-            ob_sbp.setSubject(patientRef);
-            ob_sbp.setEncounter(encounterRef);
-        }
-
         // Diastolic Blood Pressure
         if (!pcs.getVital_dbp().isEmpty()) {
             Observation ob_dbp = new Observation();
