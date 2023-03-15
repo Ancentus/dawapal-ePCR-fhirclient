@@ -1,11 +1,15 @@
 package com.dawapal.epcr.controller;
 
+import com.dawapal.epcr.DawapalECprHapiFhirClientApplication;
 import com.dawapal.epcr.model.ParamedicineCareSummary;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import ca.uhn.fhir.context.FhirContext;
+import ca.uhn.fhir.rest.client.api.IGenericClient;
 
 /**
  * @author ancentus
@@ -14,6 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class PCSController {
+    // Create a context
+    FhirContext ctx = DawapalECprHapiFhirClientApplication.getFhirContext();
+
+    // Create a client
+    IGenericClient client = ctx.newRestfulGenericClient("https://hapi.fhir.org/baseR4");
     
     /**s
      * @param pcs
