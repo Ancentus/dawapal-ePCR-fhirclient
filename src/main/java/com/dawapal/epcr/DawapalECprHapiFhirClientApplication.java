@@ -8,22 +8,30 @@ import org.hl7.fhir.r4.model.Patient;
 
 @SpringBootApplication
 public class DawapalECprHapiFhirClientApplication {
+  static FhirContext ctx;
 
-	public static void main(String[] args) {
-		SpringApplication.run(DawapalECprHapiFhirClientApplication.class, args);
-        
-        // Create a context
-      FhirContext ctx = FhirContext.forR4();
+  public static void main(String[] args) {
+    SpringApplication.run(DawapalECprHapiFhirClientApplication.class, args);
 
-      // Create a client
-      IGenericClient client = ctx.newRestfulGenericClient("https://hapi.fhir.org/baseR4");
+    // Create a context
+    ctx = FhirContext.forR4();
 
-      // Read a patient with the given ID
-      Patient patient = client.read().resource(Patient.class).withId("example").execute();
+    // Create a client
+    IGenericClient client = ctx.newRestfulGenericClient("https://hapi.fhir.org/baseR4");
 
-      // Print the output
-      String string = ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(patient);
-      System.out.println(string);
+    // Read a patient with the given ID
+    Patient patient = client.read().resource(Patient.class).withId("example").execute();
+
+    // Print the output
+    String string = ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(patient);
+    System.out.println(string);
+  }
+
+  public static FhirContext getFhirContext(){
+		if(ctx == null){
+			ctx = FhirContext.forR4();
+		}
+		return ctx;
 	}
 
 }

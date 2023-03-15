@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "cfc070b9-4955-4665-901a-35d7e85f389a",
+		"name": "dawapal-epcr-restapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1087311"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/pcs/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "vital_dateTime",
+							"value": "2023-03-15",
+							"type": "text"
+						},
+						{
+							"key": "vital_body_weight",
+							"value": "67",
+							"type": "text"
+						},
+						{
+							"key": "vital_ecg",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_ecg_type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_ecg_method",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_sbp",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_dbp",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_mean_ap",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_heart_rate",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_heart_rate_method",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_pulse_oximetry",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_pulse_rhythm",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_respiratory_rate",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_respiratory_effort",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_etco2",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_co",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_glucose_level",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_temperature",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_pain_scale_score",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_pain_scale_type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_stroke_scale_score",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_stroke_scale_type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_coma_score_eye",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_coma_score_verbal",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_coma_score_motor",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_coma_score_qualifier",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_coma_score_total",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_reperfusion_checklist",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_apgar",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_revised_trauma_score",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vital_body_weight",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/pcs/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pcs",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
