@@ -1,5 +1,7 @@
 package com.dawapal.epcr.model;
 
+import jakarta.validation.constraints.NotBlank;
+
 /**
  * 
  * @author Ancentus Makau
@@ -8,6 +10,7 @@ package com.dawapal.epcr.model;
  */
 
 public class ParamedicineCareSummary {
+    @NotBlank(message = "DateTime of vitals is mandatory")
     private String vital_dateTime;
     private String vital_ecg;
     private String vital_ecg_type;
