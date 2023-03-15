@@ -1,7 +1,8 @@
-package com.dawapal.epcr.security;
+package com.dawapal.epcr.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -18,7 +19,7 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
 			.authorizeHttpRequests((requests) -> requests
-				.requestMatchers("/", "/pcs/create").permitAll()
+				.requestMatchers(HttpMethod.POST, "/pcs/create").permitAll()
 			);
 
 		return http.build();
