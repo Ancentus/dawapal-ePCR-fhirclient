@@ -13,6 +13,7 @@ import org.hl7.fhir.r4.model.StringType;
 import org.hl7.fhir.r4.model.Observation.ObservationStatus;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,6 +25,7 @@ import ca.uhn.fhir.rest.client.api.IGenericClient;
  * @version 1.0.0
  */
 
+@CrossOrigin(maxAge = 3600)
 @RestController
 public class PCSController {
     // Create a context

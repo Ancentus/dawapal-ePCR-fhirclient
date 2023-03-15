@@ -18,22 +18,41 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
-			.authorizeHttpRequests((requests) -> requests
-				.requestMatchers(HttpMethod.POST, "/pcs/create").permitAll()
-			);
+			.csrf().disable()
+				.authorizeHttpRequests((requests) -> requests
+						.requestMatchers(HttpMethod.POST, "/pcs/create").permitAll());
 
 		return http.build();
 	}
 
+//    @Bean
+//    CorsConfigurationSource corsConfigurationSource() {
+//        CorsConfiguration configuration = new CorsConfiguration();
+//        configuration.setAllowedOrigins(Arrays.asList("*"));
+//        configuration.setAllowedMethods(Arrays.asList("*"));
+//        configuration.setAllowedHeaders(Arrays.asList("*"));
+//        configuration.setAllowCredentials(true);
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**", configuration);
+//        return source;
+//    }
+
 	// @Bean
 	// public UserDetailsService userDetailsService() {
-	// 	UserDetails user =
-	// 		 User.withDefaultPasswordEncoder()
-	// 			.username("user")
-	// 			.password("password")
-	// 			.roles("USER")
-	// 			.build();
+	// UserDetails user =
+	// User.withDefaultPasswordEncoder()
+	// .username("user")
+	// .password("password")
+	// .roles("USER")
+	// .build();
 
-	// 	return new InMemoryUserDetailsManager(user);
+	// return new InMemoryUserDetailsManager(user);
+	// }
+
+	// @Bean
+	// public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	// 	http
+	// 		.csrf().disable();
+	// 	return http.build();
 	// }
 }
