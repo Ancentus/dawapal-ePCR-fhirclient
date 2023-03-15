@@ -10,37 +10,39 @@ import jakarta.validation.constraints.NotBlank;
  */
 
 public class ParamedicineCareSummary {
+
+    // VITAL SIGNS
     @NotBlank(message = "DateTime of vitals is mandatory")
-    private String vital_dateTime;
-    private String vital_ecg;
-    private String vital_ecg_type;
-    private String vital_ecg_method;
-    private String vital_sbp;
-    private String vital_dbp;
-    private String vital_mean_ap;
-    private String vital_heart_rate;
-    private String vital_heart_rate_method;
-    private String vital_pulse_oximetry;
-    private String vital_pulse_rhythm;
-    private String vital_respiratory_rate;
-    private String vital_respiratory_effort;
-    private String vital_etco2;
-    private String vital_co;
-    private String vital_glucose_level;
-    private String vital_temperature;
-    private String vital_pain_scale_score;
-    private String vital_pain_scale_type;
-    private String vital_stroke_scale_score;
-    private String vital_stroke_scale_type;
-    private String vital_coma_score_eye;
-    private String vital_coma_score_verbal;
-    private String vital_coma_score_motor;
-    private String vital_coma_score_qualifier;
-    private String vital_coma_score_total;
-    private String vital_reperfusion_checklist;
-    private String vital_apgar;
-    private String vital_revised_trauma_score;
-    private String vital_body_weight;
+    private String vital_dateTime;  // Date/Time Vital Signs Taken 
+    private String vital_ecg;   // Cardiac Rhythm / Electrocardiography (ECG)
+    private String vital_ecg_type;  // ECG Type
+    private String vital_ecg_method;    // Method of ECG Interpretation
+    private String vital_sbp;   // SBP (Systolic Blood Pressure)
+    private String vital_dbp;   // DBP (Diastolic Blood Pressure)
+    private String vital_mean_ap;   // Mean Arterial Pressure
+    private String vital_heart_rate;    // Heart Rate
+    private String vital_heart_rate_method; // Method of Heart Rate Measurement
+    private String vital_pulse_oximetry;    // Pulse Oximetry
+    private String vital_pulse_rhythm;  // Pulse Rhythm
+    private String vital_respiratory_rate;  // Respiratory Rate 
+    private String vital_respiratory_effort;    // Respiratory Effort
+    private String vital_etco2; // End Title Carbon Dioxide (ETCO2)
+    private String vital_co;    // Carbon Monoxide (CO)
+    private String vital_glucose_level; // Blood Glucose Level
+    private String vital_temperature;   // Temperature
+    private String vital_pain_scale_score;  // Pain Scale Score
+    private String vital_pain_scale_type;   // Pain Scale Type
+    private String vital_stroke_scale_score;    // Stroke Scale Score
+    private String vital_stroke_scale_type; // Stroke Scale Type
+    private String vital_coma_score_eye;    // Glasgow Coma Score-Eye
+    private String vital_coma_score_verbal; // Glasgow Coma Score-Verbal
+    private String vital_coma_score_motor;  // Glasgow Coma Score-Motor
+    private String vital_coma_score_qualifier;  // Glasgow Coma Score-Qualifier
+    private String vital_coma_score_total;  // Total Glasgow Coma Score
+    private String vital_reperfusion_checklist; // Reperfusion Checklist
+    private String vital_apgar; // APGAR
+    private String vital_revised_trauma_score;  // Revised Trauma Score
+    private String vital_body_weight;   // Estimated Body Weight in Kilograms
     
     public ParamedicineCareSummary() {
     }
