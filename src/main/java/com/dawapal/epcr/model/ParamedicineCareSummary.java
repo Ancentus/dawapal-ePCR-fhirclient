@@ -11,6 +11,29 @@ import jakarta.validation.constraints.NotBlank;
 
 public class ParamedicineCareSummary {
 
+    //PATIENT
+    @NotBlank(message = "pat_ems_id is mandatory")
+    private String pat_ems_id;   // EMS Patient ID
+    private String pat_first_name; // Fisrt Name
+    private String pat_middle_name; // Middle Name
+    private String pat_last_name; // Last Name
+    private String pat_address; // Home Address
+    private String pat_city; // Home City
+    private String pat_country; // Home Country
+    private String pat_postal_code; // Home Postal Code
+    private String pat_gender;  // Gender
+    private String pat_dob; // Date of Birth
+    private String pat_phone; // Phone Number
+    private String pat_nok_first_name;  // Next of Kin First Name 
+    private String pat_nok_middle_name; // Next of Kin Middle Name 
+    private String pat_nok_last_name;   // Next of Kin Last Name 
+    private String pat_nok_address; // Next of Kin Home Address
+    private String pat_nok_city;    // Next of Kin Home City
+    private String pat_nok_country; // Next of Kin Home Country
+    private String pat_nok_postal_code; // Next of Kin Home Postal Code
+    private String pat_nok_phone;   // Next of Kin Phone Number
+    private String pat_nok_relationship;    // Next of Kin Relationship
+
     // VITAL SIGNS
     @NotBlank(message = "DateTime of vitals is mandatory")
     private String vital_dateTime;  // Date/Time Vital Signs Taken 
