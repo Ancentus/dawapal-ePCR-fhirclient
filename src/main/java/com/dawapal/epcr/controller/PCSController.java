@@ -46,11 +46,38 @@ public class PCSController {
     public ResponseEntity<String> createPCS(ParamedicineCareSummary pcs) {
         // Create Patient Resource
         Patient patient = new Patient();
-        // TODO: populate patient
+        // TODO: populate patient 
+               // TODO: set the system to the correct system
+        patient.addIdentifier().setSystem("http://clinfhir.com/fhir/NamingSystem/identifier").setValue("identifier-"+pcs.getPatientEmsId());
+        patient.addName().setFamily(pcs.getPatientLastName()).addGiven(pcs.getPatientFirstName());
+        patient.setGender(pcs.getPatientGender());
+        patient.setBirthDate(pcs.getPatientBirthDate());
+        patient.setAddress(pcs.getPatientAddress() ) ;
+        
 
         Reference patientRef = new Reference();
         patientRef.setReference("Patient/" + patient.getId());
         patientRef.setType("Patient");
+        
+
+        /**
+         * @edited_by lewismunene020 
+         *   i have added the following lines of code to set the patient properties
+         *   i need to  know if its working .. testing  is comming  along 
+         *   i will be adding more properties to the patient reference once current  ones proof to  be working  
+         */
+
+
+        patientRef.setDisplay(patient.getName().get(0).getNameAsSingleString());
+        patientRef.setIdentifier(patient.getIdentifier().get(0)); 
+        patientRef.setProperty("name", patient.getName().get(0));
+        patientRef.setProperty("gender" , patient.getGenderElement());
+        patientRef.setProperty("birthDate" , patient.getBirthDateElement());
+        patientRef.setProperty("address" , patient.getAddress().get(0));
+        patientRef.setProperty("telecom" , patient.getTelecom().get(0));
+        patientRef.setProperty("maritalStatus" , patient.getMaritalStatus());
+
+
 
         // Create Encounter Resource
         Encounter encounter = new Encounter();

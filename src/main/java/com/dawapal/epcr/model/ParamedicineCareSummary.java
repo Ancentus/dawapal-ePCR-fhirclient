@@ -1,5 +1,13 @@
 package com.dawapal.epcr.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
+import org.hl7.fhir.r4.model.Address;
+import org.hl7.fhir.r4.model.Enumerations.AdministrativeGender;
+
 import jakarta.validation.constraints.NotBlank;
 
 /**
@@ -14,7 +22,7 @@ public class ParamedicineCareSummary {
     //PATIENT
     @NotBlank(message = "pat_ems_id is mandatory")
     private String pat_ems_id;   // EMS Patient ID
-    private String pat_first_name; // Fisrt Name
+    private String pat_first_name; // First Name
     private String pat_middle_name; // Middle Name
     private String pat_last_name; // Last Name
     private String pat_address; // Home Address
@@ -33,6 +41,8 @@ public class ParamedicineCareSummary {
     private String pat_nok_postal_code; // Next of Kin Home Postal Code
     private String pat_nok_phone;   // Next of Kin Phone Number
     private String pat_nok_relationship;    // Next of Kin Relationship
+    private String pat_birth_date;  // Patient Birth Date (YYYY-MM-DD) 
+
 
     // VITAL SIGNS
     @NotBlank(message = "DateTime of vitals is mandatory")
@@ -66,10 +76,16 @@ public class ParamedicineCareSummary {
     private String vital_apgar; // APGAR
     private String vital_revised_trauma_score;  // Revised Trauma Score
     private String vital_body_weight;   // Estimated Body Weight in Kilograms
+
+    
     
     public ParamedicineCareSummary() {
+
     }
 
+    /**
+     * @vital_signs  GETTERS AND SETTTERS
+     */
     public String getVital_dateTime() {
         return vital_dateTime;
     }
@@ -308,6 +324,47 @@ public class ParamedicineCareSummary {
 
     public void setVital_body_weight(String vital_body_weight) {
         this.vital_body_weight = vital_body_weight;
+    }
+
+
+    /**
+     * @patient_data getters and setters
+     */
+
+        /**
+     * @Note added this getter to get the patient ems id and use it to create a patient identifier in pcsController
+     */
+    public String getPatientEmsId() {
+        return this.pat_ems_id;
+    }
+
+    public String getPatientLastName() {
+        return this.pat_last_name;
+    }
+
+    public String getPatientFirstName() {
+        return this.pat_first_name;
+    }
+
+    public AdministrativeGender getPatientGender() {
+        return AdministrativeGender.valueOf(this.pat_gender);
+    }
+
+    public Date getPatientBirthDate(){
+        // create a data object from  the pat_birth_date string
+        Date date = null ;
+        try {
+            date = new SimpleDateFormat("yyyy-MM-dd").parse(this.pat_birth_date);
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return date;
+    }
+
+    public List<Address> getPatientAddress() {
+        // use the string  pat_address string to from an address object 
+        return  null;
     }
 
     
