@@ -37,9 +37,9 @@ public class ParamedicineCareSummary {
     // VITAL SIGNS
     @NotBlank(message = "DateTime of vitals is mandatory")
     private String vital_dateTime;  // Date/Time Vital Signs Taken 
-    private String vital_ecg;   // Cardiac Rhythm / Electrocardiography (ECG)
-    private String vital_ecg_type;  // ECG Type
-    private String vital_ecg_method;    // Method of ECG Interpretation
+    // private String vital_ecg;   // Cardiac Rhythm / Electrocardiography (ECG)
+    // private String vital_ecg_type;  // ECG Type
+    // private String vital_ecg_method;    // Method of ECG Interpretation
     private String vital_sbp;   // SBP (Systolic Blood Pressure)
     private String vital_dbp;   // DBP (Diastolic Blood Pressure)
     private String vital_mean_ap;   // Mean Arterial Pressure
@@ -76,30 +76,6 @@ public class ParamedicineCareSummary {
 
     public void setVital_dateTime(String vital_dateTime) {
         this.vital_dateTime = vital_dateTime;
-    }
-
-    public String getVital_ecg() {
-        return vital_ecg;
-    }
-
-    public void setVital_ecg(String vital_ecg) {
-        this.vital_ecg = vital_ecg;
-    }
-
-    public String getVital_ecg_type() {
-        return vital_ecg_type;
-    }
-
-    public void setVital_ecg_type(String vital_ecg_type) {
-        this.vital_ecg_type = vital_ecg_type;
-    }
-
-    public String getVital_ecg_method() {
-        return vital_ecg_method;
-    }
-
-    public void setVital_ecg_method(String vital_ecg_method) {
-        this.vital_ecg_method = vital_ecg_method;
     }
 
     public String getVital_sbp() {

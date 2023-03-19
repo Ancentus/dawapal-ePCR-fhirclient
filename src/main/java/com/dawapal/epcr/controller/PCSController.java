@@ -72,19 +72,19 @@ public class PCSController {
         DateTimeType vitals_dt = new DateTimeType(pcs.getVital_dateTime());
 
         // Cardiac Rhythm
-        if (!pcs.getVital_ecg().isEmpty()) {
-            Observation ob_ecg = new Observation();
-            ob_ecg.setStatus(ObservationStatus.FINAL);
-            ob_ecg.addCategory(vital_cat);
-            CodeableConcept ecg_code = new CodeableConcept();
-            ecg_code.addCoding().setDisplay("Cardiac Rhythm / Electrocardiography (ECG)");
-            ob_ecg.setCode(ecg_code);
-            ob_ecg.setValue(new StringType(pcs.getVital_ecg()));
-            ob_ecg.setEffective(vitals_dt);
+        // if (!pcs.getVital_ecg().isEmpty()) {
+        //     Observation ob_ecg = new Observation();
+        //     ob_ecg.setStatus(ObservationStatus.FINAL);
+        //     ob_ecg.addCategory(vital_cat);
+        //     CodeableConcept ecg_code = new CodeableConcept();
+        //     ecg_code.addCoding().setDisplay("Cardiac Rhythm / Electrocardiography (ECG)");
+        //     ob_ecg.setCode(ecg_code);
+        //     ob_ecg.setValue(new StringType(pcs.getVital_ecg()));
+        //     ob_ecg.setEffective(vitals_dt);
 
-            ob_ecg.setSubject(patientRef);
-            ob_ecg.setEncounter(encounterRef);
-        }
+        //     ob_ecg.setSubject(patientRef);
+        //     ob_ecg.setEncounter(encounterRef);
+        // }
 
         // Systolic Blood Pressure
         if (!pcs.getVital_sbp().isEmpty()) {
